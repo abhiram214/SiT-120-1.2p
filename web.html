@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIA TODAY</title>
+</head>
+<body>
+    <div class="header">
+        <h1>INDIA TODAY</h1>
+        <p>The No.1 News Channel.</p>
+    </div>
+
+    <div class="container">
+        <div class="Today India Celebrates 77th Independence day">
+            <div class="sidebar">
+                <h2>Headlines</h2>
+                <p>15th August 2023</p>
+            </div>
+            
+            <div class="content">
+                <h2>Today India Celebrates 77th Independence day</h2>
+                <p>Prime Minister Modi ji has attended the flag hosting ceremony in New Delhi Red Fort.</p>
+                <img src="inage.jpeg" width="400px" height="200px">
+                <button id="changeColorBtn">Click for fun</button>
+                
+                <div class="content">
+                    <h3>India marks its 77th Independence Day on August 15 this year. As the country celebrates 76 years of freedom, we must know its history, the struggle behind gaining our Independence, the freedom fighters who fought for us, and more. The day is celebrated with pomp across the nation as people organize events, decorate their homes in the Tricolour, read speeches and poems about freedom fighters, hoist the national flag, and more.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Concepts
+
+        // a. String Methods
+        const sampleString = "   India Today   ";
+        const trimmedString = sampleString.trim();
+        const upperCaseString = sampleString.toUpperCase();
+        const lowerCaseString = sampleString.toLowerCase();
+        const substringResult = sampleString.substring(0, 5);
+        const replacedString = sampleString.replace("Today", "Tomorrow");
+
+        // b. Number Methods
+        const sampleNumber = 123.456;
+        const fixedNumber = sampleNumber.toFixed(2);
+        const stringNumber = sampleNumber.toString();
+        const parsedNumber = parseFloat("789.123");
+        const roundedNumber = Math.round(sampleNumber);
+
+        // c. Array Methods
+        const headlines = ["Headline 1", "Headline 2", "Headline 3"];
+        headlines.push("Headline 4");
+        headlines.pop();
+        const joinedHeadlines = headlines.join(", ");
+        const indexOfHeadline = headlines.indexOf("Headline 2");
+        const headlineSlice = headlines.slice(0, 2);
+
+        // d. Date Methods
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1; // Month is zero-based, so add 1.
+        const day = currentDate.getDate();
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+
+        // e. Function Methods
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+        const greeting = greet("Abhi");
+        const functionType = typeof greet;
+
+        // Changing content color on button click
+        const changeColorBtn = document.getElementById("changeColorBtn");
+        const contentArea = document.querySelector(".content");
+        changeColorBtn.addEventListener("click", () => {
+            contentArea.style.backgroundColor = getRandomColor();
+        });
+
+        // Displaying the output
+        const outputElement = document.createElement("p");
+        outputElement.innerHTML = `
+            String Methods:
+            Trimmed: "${trimmedString}", Uppercase: "${upperCaseString}", Lowercase: "${lowerCaseString}", Substring: "${substringResult}", Replaced: "${replacedString}"<br>
+            Number Methods:
+            Fixed: "${fixedNumber}", String: "${stringNumber}", Parsed: "${parsedNumber}", Rounded: "${roundedNumber}"<br>
+            Array Methods:
+            Pushed: "${headlines}", Popped: "${headlines}", Joined: "${joinedHeadlines}", IndexOf: "${indexOfHeadline}", Sliced: "${headlineSlice}"<br>
+            Date Methods:
+            Year: "${year}", Month: "${month}", Day: "${day}", Hours: "${hours}", Minutes: "${minutes}"<br>
+            Function Methods:
+            Greeting: "${greeting}", Type: "${functionType}"
+        `;
+        document.body.appendChild(outputElement);
+
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
+
+
